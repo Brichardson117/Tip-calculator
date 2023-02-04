@@ -6,10 +6,10 @@ let billInputHandler = function (event) {
   event.preventDefault();
 
   let amount = amountInput.value;
-  console.log(amount);
   calculateTip(amount)
+  amount.amountInput = " "
 
-  if(amount === NaN) {
+  if(amount === 0) {
     window.alert('invalid Input')
   }
   
@@ -17,7 +17,12 @@ let billInputHandler = function (event) {
 
 
 function calculateTip(amount) {
-let tenPercent = amount * 2
-console.log(tenPercent)
+let tenPercent = amount * 0.10
+let twentyPercent = amount * 0.20
+let thirtyPercent = amount * 0.30
+
+console.log(tenPercent.toFixed(2))
+console.log(twentyPercent.toFixed(2))
+console.log(thirtyPercent.toFixed(2))
 }
 submitBtn, addEventListener("click", billInputHandler);
