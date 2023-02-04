@@ -6,23 +6,21 @@ let billInputHandler = function (event) {
   event.preventDefault();
 
   let amount = amountInput.value;
-  calculateTip(amount)
-  amount.amountInput = " "
+  calculateTip(amount);
+  amount.amountInput = " ";
 
-  if(amount === 0) {
-    window.alert('invalid Input')
+  if (amount === 0) {
+    window.alert("invalid Input");
   }
-  
 };
 
-
 function calculateTip(amount) {
-let tenPercent = amount * 0.10
-let twentyPercent = amount * 0.20
-let thirtyPercent = amount * 0.30
+  let percentagesArray = [0.10, 0.15, 0.20, 0.25];
 
-console.log(tenPercent.toFixed(2))
-console.log(twentyPercent.toFixed(2))
-console.log(thirtyPercent.toFixed(2))
+  for (let i = 0; i < percentagesArray.length; i++) {
+    let response  = (amount * percentagesArray[i]);
+
+    console.log(`$${response.toFixed(2)}`)
+  }
 }
 submitBtn, addEventListener("click", billInputHandler);
