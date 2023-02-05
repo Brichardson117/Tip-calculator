@@ -15,12 +15,12 @@ let billInputHandler = function (event) {
 };
 
 function calculateTip(amount) {
-  let percentagesArray = [0.10, 0.15, 0.20, 0.25];
+  let percentagesArray = [0.1, 0.15, 0.2, 0.25];
 
   for (let i = 0; i < percentagesArray.length; i++) {
-    let response  = (amount * percentagesArray[i]);
+    let response = amount * percentagesArray[i];
 
-    console.log(`$${response.toFixed(2)}`)
+    console.log(`$${response.toFixed(2)}`);
   }
 }
 submitBtn, addEventListener("click", billInputHandler);
